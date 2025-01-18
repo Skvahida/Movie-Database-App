@@ -44,27 +44,15 @@ class Pagination extends React.Component {
 
   render() {
     const {pageNo} = this.state
-    const {totalPages} = this.props
+    // const {totalPages} = this.props
 
     return (
       <div className="mb-3 d-flex justify-content-center align-items-center">
-        <button
-          type="button"
-          className="control-btn"
-          onClick={this.onPrevPage}
-          disabled={pageNo === 1} // Disable Prev button on first page
-        >
+        <button type="button" className="control-btn" onClick={this.onPrevPage}>
           Prev
         </button>
-        <p className="page-no">
-          {pageNo} of {totalPages} {/* Display current page and total pages */}
-        </p>
-        <button
-          type="button"
-          className="control-btn"
-          onClick={this.onNextPage}
-          disabled={pageNo === totalPages} // Disable Next button on last page
-        >
+        <p className="page-no">{pageNo}</p>
+        <button type="button" className="control-btn" onClick={this.onNextPage}>
           Next
         </button>
       </div>
